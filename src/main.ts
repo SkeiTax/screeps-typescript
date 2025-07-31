@@ -1,5 +1,6 @@
 import { forEach } from "lodash";
 import { ErrorMapper } from "utils/ErrorMapper";
+import { MemoryCleaner } from "utils/MemoryCleaner";
 
 declare global {
   /*
@@ -39,9 +40,5 @@ export const loop = ErrorMapper.wrapLoop(() => {
   console.log(`это уже мое сообщение. крипов: ${Object.keys(Game.creeps).length}`);
 
   // Automatically delete memory of missing creeps
-  for (const name in Memory.creeps) {
-    if (!(name in Game.creeps)) {
-      delete Memory.creeps[name];
-    }
-  }
+  MemoryCleaner.Clean();
 });
