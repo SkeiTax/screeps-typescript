@@ -4,6 +4,10 @@
 # npm lock file (v5.0.0+)
 /package-lock.json
 
+# VS Code
+
+/.vscode
+
 # Ignore basic folders
 /dist
 /.rpt2_cache
