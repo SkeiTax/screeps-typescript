@@ -16,9 +16,9 @@ export function MethodLogDecorator(
 
         const methodName = propertyKey;
 
-        LogHelper.LogShift(`${className}.${methodName} started with args:`, args);
+        LogHelper.LogShift(`${className}.${methodName} Started`);
         const result = originalMethod.apply(this, args);
-        LogHelper.LogUnshift(`${className}.${methodName} finished with result:`, result);
+        LogHelper.LogUnshift(`${className}.${methodName} Complited`);
         return result;
     };
 
