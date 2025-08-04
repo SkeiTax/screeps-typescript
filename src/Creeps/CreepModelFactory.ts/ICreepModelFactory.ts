@@ -1,52 +1,54 @@
-interface ICreepModelFactory
+import { CreepModel } from "Creeps/CreepModel";
+
+export interface ICreepModelFactory
 {
     /**
      * Создает добытчика (Harvester)
      */
-    CreateHarvester(): void;
+    CreateHarvester(): CreepModel;
 
     /**
      * Создает строителя (Builder)
      */
-    CreateBuilder (): void;
+    CreateBuilder (): CreepModel;
 
     /**
      * Создает обновляльщика (Updater)
      */
-    CreateUpgrader (): void;
+    CreateUpgrader (): CreepModel;
 
     /**
      * Создает ремонтрика (Repairer)
      */
-    CreateRepairer (): void;
+    CreateRepairer (): CreepModel;
 
     /**
      * Создает перевозчика/транспантера (Transporter)
      */
-    CreateTransporter (): void;
+    CreateTransporter (): CreepModel;
 
     /**
      * Создает копателя/шахтера (Miner)
      */
-    CreateMiner (): void;
+    CreateMiner (): CreepModel;
 
     /**
      * Создает разведчика (Scout)
      */
-    CreateScout (): void;
+    CreateScout (): CreepModel;
 
     /**
      * Создает захватчика (Claimer)
      */
-    CreateClaimer (): void;
+    CreateClaimer (): CreepModel;
 
     /**
      * Создает защитника (Defender)
      */
-    CreateDefender (): void;
+    CreateDefender (): CreepModel;
 
     /**
      * Создает удаленного добытчика (RemoteHarvester)
      */
-    CreateRemoteHarvester (): void;
+    CreateRemoteHarvester (): CreepModel;
 }

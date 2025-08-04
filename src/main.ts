@@ -1,7 +1,7 @@
-import { forEach } from "lodash";
 import { ErrorMapper } from "utils/ErrorMapper";
 import { LogHelper } from "utils/LogHelper";
 import { MemoryCleaner } from "Services/MemoryCleaner";
+import { CreepModelBaseFactory } from "Creeps/CreepModelFactory.ts/CreepModelBaseFactory";
 
 declare global {
   /*
@@ -39,6 +39,13 @@ export const loop = ErrorMapper.wrapLoop(() => {
   LogHelper.Log(`========================================`);
   LogHelper.Log(`Current game tick is ${Game.time}`);
   LogHelper.Log(`это уже мое сообщение. крипов: ${Object.keys(Game.creeps).length}`);
+
+  const creepFactory = new CreepModelBaseFactory();
+
+  const harvesterModel = creepFactory.CreateHarvester();
+
+  const {body, name, memory} = harvesterModel;
+  Game.spawns.Spawn1.spawnCreep(body, name, {memory: memory} as any);
 
   // Automatically delete memory of missing creeps
   MemoryCleaner.Clean();
